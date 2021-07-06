@@ -21,7 +21,7 @@ def main():
         md = text.replace("◆", "##").replace("\n \n", "\n").replace("\n───────────────\n", "\n")
         md = "# " + re.sub("[▪•]", "*", md)
         # remove "(Highlight: 170; Note: 1)" thing
-        md.replace(md[md.find("("):-md.find(")")], "")
+        md = md.replace(md[md.find("("):-md.find(")")], "")
         filename, file_extension = ntpath.splitext(path)
         if file_extension.strip():
             newpath = path.replace(file_extension, f".md")
